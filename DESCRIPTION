@@ -1,10 +1,10 @@
-Package: snakecaser
+Package: pipestarter
 Type: Package
-Title: Convert Character Strings to Snake Case
+Title: Use variable name to start an assigment pipe
 Version: 0.1.0
-Authors@R: person("Ben", "Marwick", role = c("aut", "cre"), email = "benmarwick@gmail.com")
-Maintainer: Ben Marwick <bmarwick@gmail.com>
-Description: An RStudio Add-in For Converting Character Strings to Snake Case.
+Authors@R: person("Art", "Steinmetz", role = c("aut", "cre"), email = "apsteinmetz@gmail.com")
+Maintainer: Art Steinmetz <asteinmetz@gmail.com>
+Description: An RStudio Add-in For starting an assigment pipe.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

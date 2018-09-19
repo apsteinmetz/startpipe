@@ -1,4 +1,4 @@
-Name: snake caser
-Description: Convert character strings to snake case
-Binding: snake_caser
+Name: Pipestarter
+Description: Convert variable name to beginning of assignment pipe
+Binding: pipe_start
 Interactive: false
