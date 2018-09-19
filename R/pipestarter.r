@@ -6,21 +6,27 @@
 #'
 #' @param x an RStudioAPI document position.
 #'
-#' @return code that starts an assignment string
+#' @return
 #' @export
 #'
-#' @importFrom  rstudioapi getActiveDocumentContext modifyRange document_position
+#' @importFrom  rstudioapi getSourceEditorContext insertText document_range
 #' 
 #'
-start_pipe = function(x) {
+start_pipe = function() {
 
   context <- rstudioapi::getSourceEditorContext()
-  if is.null(context$selection) {
-    endcol<-context$selection[[1]]$range$end[2]
+  if (context$selection[[1]]$text=="") {
+    cursorpos <- context$selection[[1]]$range$end
+    endcol<-cursorpos[2]
+    endrow<- cursorpos[1]
+    #take whole line before endcol
+    startcol <- 1 #1-based index
+    setSelectionRanges(document_range(c(endrow,1),c(endrow,endcol))) %>% 
+      trimws()
+    varname<-rstudioapi::getSourceEditorContext()$selection[[1]]$text %>% trimws()
+    insertText(cursorpos,pipe_starter(varname))
+    
   }
-  for (con in rev(context$selection))
-  rstudioapi::modifyRange(con$range, to_snake_case(con$text), context$id)
-
 }
 
 
