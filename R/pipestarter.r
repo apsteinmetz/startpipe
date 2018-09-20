@@ -4,8 +4,7 @@
 #'
 #' @description Convert variable name to beginning of assignment pipe
 #'
-#' @param x an RStudioAPI document position.
-#'
+#' @param
 #' @return
 #' @export
 #'
@@ -43,8 +42,7 @@ start_pipe = function() {
 #'
 #' @examples
 #' pipe_starter("myvar")
-#'# myvar <- myvar %>% 
-
+#'<- myvar %>% 
 
 
 pipe_starter = function(x) {

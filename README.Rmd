@@ -31,6 +31,7 @@ my_varname <- my_varname %>%
 
 That's it!
 
+Alternatively, highlighted text will be modified the same way.
 
 ## Installation
 
