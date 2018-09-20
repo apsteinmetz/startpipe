@@ -1,12 +1,12 @@
 ---
-output:
+  output:
   md_document:
-    variant: markdown_github
+  variant: markdown_github
 ---
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, echo = FALSE}
+  
+  <!-- README.md is generated from README.Rmd. Please edit that file -->
+  
+  ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -30,13 +30,13 @@ if the cursor in the RStudio editor is at the end of the variable name this is w
 my_varname <- my_varname %>%
 
 That's it!
-
-Alternatively, highlighted text will be modified the same way.
+  
+  Alternatively, highlighted text will be modified the same way.
 
 ## Installation
 
 This add-in can be installed with:
-
-```{r eval=FALSE}
+  
+  ```{r eval=FALSE}
 devtools::install_github("apsteinmetz/startpipe")
 ```
