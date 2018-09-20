@@ -9,26 +9,25 @@
 #' @return
 #' @export
 #'
-#' @importFrom  rstudioapi getSourceEditorContext insertText document_range
+#' @importFrom  rstudioapi getSourceEditorContext insertText document_range setSelectionRanges
 #' 
 #'
 start_pipe = function() {
 
   context <- rstudioapi::getSourceEditorContext()
+  cursorpos <- context$selection[[1]]$range$end
+  endcol<-cursorpos[2]
+  endrow<- cursorpos[1]
   if (context$selection[[1]]$text=="") {
-    cursorpos <- context$selection[[1]]$range$end
-    endcol<-cursorpos[2]
-    endrow<- cursorpos[1]
     #take whole line before endcol
     startcol <- 1 #1-based index
-    setSelectionRanges(document_range(c(endrow,1),c(endrow,endcol)))
-    varname<-trimews(rstudioapi::getSourceEditorContext()$selection[[1]]$text)
-    insertText(cursorpos,pipe_starter(varname))
-    
+    rstudioapi::setSelectionRanges(rstudioapi::document_range(c(endrow,1),c(endrow,endcol)))
+    context <- rstudioapi::getSourceEditorContext()
   }
+  varname<-trimws(context$selection[[1]]$text)
+  rstudioapi::insertText(cursorpos,pipe_starter(varname))
 }
 
-testme
 #' @title Pipe Starter
 #'
 #' @description A function to take all text to the left of the cursor and use it as the pipe starter
@@ -45,7 +44,7 @@ testme
 
 
 pipe_starter = function(x) {
-  x <- paste(x," <- ",x," %>% ",sep = "")
+  x <- paste(" <- ",x," %>% ",sep = "")
   x
 }
 
