@@ -26,6 +26,10 @@ start_pipe = function() {
   }
   varname<-trimws(context$selection[[1]]$text)
   rstudioapi::insertText(cursorpos,pipe_starter(varname))
+  #deselct text
+  endrange <- rstudioapi::getSourceEditorContext()$selection[[1]]$range$end
+  rstudioapi::setSelectionRanges(document_range(endrange,endrange))
+  
 }
 
 #' @title Pipe Starter

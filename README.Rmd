@@ -25,7 +25,7 @@ Start a line with:
 
 my_varname
 
-if the curser in the RStudio editor is at the end of the variable name this is what the addin will change it to:
+if the cursor in the RStudio editor is at the end of the variable name this is what the addin will change it to:
 
 my_varname <- my_varname %>%
 
