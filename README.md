@@ -3,7 +3,7 @@ pipestarter
 ===========
 
 The goal of pipestarter is to provide an RStudio add-in for converting a
-variable name to an assignment string. The project framework was cloned
+variable name to an assignment string commonly used to start pipe chains. The project framework was cloned
 from Ben Marwick’s “snakecaser”
 <https://github.com/benmarwick/snakecaser>
 
