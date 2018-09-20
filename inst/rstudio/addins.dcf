@@ -1,4 +1,4 @@
 Name: Pipestarter
 Description: Convert variable name to beginning of assignment pipe
-Binding: pipe_start
+Binding: start_pipe
 Interactive: false

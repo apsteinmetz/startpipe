@@ -21,15 +21,14 @@ start_pipe = function() {
     endrow<- cursorpos[1]
     #take whole line before endcol
     startcol <- 1 #1-based index
-    setSelectionRanges(document_range(c(endrow,1),c(endrow,endcol))) %>% 
-      trimws()
-    varname<-rstudioapi::getSourceEditorContext()$selection[[1]]$text %>% trimws()
+    setSelectionRanges(document_range(c(endrow,1),c(endrow,endcol)))
+    varname<-trimews(rstudioapi::getSourceEditorContext()$selection[[1]]$text)
     insertText(cursorpos,pipe_starter(varname))
     
   }
 }
 
-
+testme
 #' @title Pipe Starter
 #'
 #' @description A function to take all text to the left of the cursor and use it as the pipe starter
