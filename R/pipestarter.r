@@ -27,7 +27,7 @@ start_pipe = function() {
   rstudioapi::insertText(cursorpos,pipe_starter(varname))
   #deselct text
   endrange <- rstudioapi::getSourceEditorContext()$selection[[1]]$range$end
-  rstudioapi::setSelectionRanges(document_range(endrange,endrange))
+  rstudioapi::setSelectionRanges(rstudioapi::document_range(endrange,endrange))
   
 }
 
